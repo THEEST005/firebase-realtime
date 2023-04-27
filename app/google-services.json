@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "368469953864",
+    "project_id": "fir-realtime-wandera-c9c2e",
+    "storage_bucket": "fir-realtime-wandera-c9c2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368469953864:android:9abcdb54d81ccf747c777d",
+        "android_client_info": {
+          "package_name": "com.example.firebaserealtime_wandera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368469953864-op7drkidid9qo7mvq6addp5fojnase3m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ_0OPO-RnBxPZuNqBmSa3YXQ5Vb7q-j4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "368469953864-op7drkidid9qo7mvq6addp5fojnase3m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
