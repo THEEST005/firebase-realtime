@@ -14,7 +14,7 @@ class Loginactivity : AppCompatActivity() {
     lateinit var login:Button
     lateinit var register:Button
 
-    lateinit var auth:FirebaseAuth
+    lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loginactivity)
@@ -35,13 +35,13 @@ class Loginactivity : AppCompatActivity() {
         }
 
         login.setOnClickListener {
-            var arafa = email.text.toString().trim()
-            var siri = password.text.toString().trim()
+            var edt_email = email.text.toString().trim()
+            var edt_password = password.text.toString().trim()
 
-            if (arafa.isEmpty()|| siri.isEmpty()){
+            if (edt_email.isEmpty()|| edt_password.isEmpty()){
                 Toast.makeText(this, "one of the inputs is empty", Toast.LENGTH_SHORT).show()
             } else{
-                   auth.signInWithEmailAndPassword(arafa,siri).addOnCompleteListener(this){
+                   auth.signInWithEmailAndPassword(edt_email,edt_password).addOnCompleteListener(this){
                        if (it.isSuccessful){
                            Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show()
 

@@ -1,5 +1,6 @@
 package com.example.firebaserealtime_wandera
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -31,28 +32,32 @@ class Registeractivity : AppCompatActivity() {
 
         createaccount.setOnClickListener {
             var edtname = name.text.toString().trim()
-            var address = email.text.toString().trim()
-            var access = password.text.toString().trim()
+            var edtemail = email.text.toString().trim()
+            var edtpassword = password.text.toString().trim()
 
             //validate inputs
-            if (edtname.isEmpty()|| address.isEmpty()|| access.isEmpty()){
-                Toast.makeText(this, "One of the fields is empty", Toast.LENGTH_SHORT).show()
-            } else{
-                //create a user in firebase
-                auth.createUserWithEmailAndPassword(address,access).addOnCompleteListener(this){
-
-                    if (it.isSuccessful){
-                        Toast.makeText(this, "user created successfully", Toast.LENGTH_SHORT).show()
-                    } else{
 
 
+            if (edtname.isEmpty()||edtemail.isEmpty()||edtpassword.isEmpty()){
+                Toast.makeText(this, "Invalid Entry!", Toast.LENGTH_SHORT).show()
+            }else{
+                auth.createUserWithEmailAndPassword(edtemail, edtpassword).addOnCompleteListener(this){
+                    if(it.isSuccessful){
+                        Toast.makeText(this, "User Created Successfully", Toast.LENGTH_SHORT).show()
+                        var gotolog = Intent(this, Loginactivity::class.java)
+                        startActivity(gotolog)
+                        finish()
+                    }else{
 
-                        Toast.makeText(this, "Failed to create account", Toast.LENGTH_SHORT).show()
 
-                        Log.d("TAG", "ERROR===>", it.exception)
+
+                        Toast.makeText(this, "Failed to Create Account.", Toast.LENGTH_SHORT).show()
+
+                        Log.d("TAG", "error------>", it.exception)
                     }
-
                 }
+
+
             }
 
         }
