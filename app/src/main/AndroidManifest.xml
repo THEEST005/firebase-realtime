@@ -15,15 +15,16 @@
         android:theme="@style/Theme.Firebaserealtime_wandera"
         tools:targetApi="31">
         <activity
+            android:name=".Registeractivity"
+            android:exported="false" />
+        <activity
             android:name=".Loginactivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
         <activity
-            android:name=".Registeractivity"
+            android:name=".cloudactivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
